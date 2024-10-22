@@ -73,7 +73,7 @@ const Topbar = ({ topslide, toggletopslide }) => {
                         </div>
                     </div>
                 </div>
-                <div className='absolute right-5 top-6 text-black cursor-pointer' onClick={toggletopslide}>
+                <div className={`${topslide ? 'rotate-180' : 'rotate-0'} transition-all duration-300 absolute right-5 top-6 text-black cursor-pointer`} onClick={toggletopslide}>
                     <SettingsIcon fontSize='large' />
                 </div>
             </aside>

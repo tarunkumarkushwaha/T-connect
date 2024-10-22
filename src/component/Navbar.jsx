@@ -3,7 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 
-const Navbar = ({ setQuery, toggletopslide }) => {
+const Navbar = ({ setQuery, toggletopslide, topslide }) => {
     const [dark, setdark] = useState(false);
     const [navitems, setnavitems] = useState(true);
 
@@ -34,7 +34,7 @@ const Navbar = ({ setQuery, toggletopslide }) => {
         <>
             <nav className={`shadow-xl z-10 bg-white min-h-[12vh] px-5 py-1 flex flex-col md:flex-row justify-between items-center`}>
                 <div
-                    className='absolute md:hidden flex top-6 left-8 text-black cursor-pointer'
+                    className={`${navitems ? 'rotate-180' : 'rotate-0'} transition-transform duration-300 absolute md:hidden flex top-6 left-8 text-black cursor-pointer`}
                     onClick={() => setnavitems(!navitems)}>
                     <MenuIcon />
                 </div>
@@ -46,8 +46,7 @@ const Navbar = ({ setQuery, toggletopslide }) => {
                 
 
                 <div
-                    className={`flex md:flex-row flex-col md:justify-between justify-center items-center transition-all duration-500 ease-in-out ${navitems ? "max-h-[500px]" : "max-h-0"} overflow-hidden w-full`}
-                    style={{ height: navitems ? "auto" : "0px" }}
+                    className={`flex md:flex-row flex-col md:justify-between justify-center items-center transition-all delay-0 duration-500 ease-in-out ${navitems ? "max-h-[500px]" : "max-h-0"} overflow-hidden w-full`}
                 >
                     <div className={`md:flex hidden w-40`}></div>
                     <ul className="flex font-semibold md:justify-between justify-center items-center md:flex-row flex-col gap-5 md:mb-0 mb-2">
@@ -72,7 +71,7 @@ const Navbar = ({ setQuery, toggletopslide }) => {
                     </div>
                 </div>
 
-                <div className='absolute right-5 top-6 text-black cursor-pointer' onClick={toggletopslide}>
+                <div className={`${topslide ? 'rotate-180' : 'rotate-0'} transition-all duration-300 absolute right-5 top-6 text-black cursor-pointer`} onClick={toggletopslide}>
                     <SettingsIcon fontSize='large' />
                 </div>
             </nav>

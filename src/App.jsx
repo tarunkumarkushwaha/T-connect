@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <Navbar query={query} setQuery={setQuery} toggletopslide={toggletopslide} />
+      <Navbar query={query} setQuery={setQuery} topslide={topslide} toggletopslide={toggletopslide} />
       <Topbar topslide={topslide} toggletopslide={toggletopslide}/>
       {/* <button onClick={notify}>Notify!</button> */}
       <ToastContainer

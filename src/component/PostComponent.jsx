@@ -16,10 +16,17 @@ const PostComponent = () => {
           user: "Tarun",
           time: new Date().toLocaleString(),
         },
-      ]);
+      ].reverse());
       setNewPost("");
     }
   };
+
+  const onEnterPress = (e) => {
+    if (e.keyCode == 13 && e.shiftKey == false) {
+      e.preventDefault();
+      handlePost();
+    }
+  }
 
   return (
     <div className="p-4 bg-gray-100 w-[32%] rounded-lg shadow-md ">
@@ -33,6 +40,7 @@ const PostComponent = () => {
           placeholder="write some text tk"
           value={newPost}
           onChange={(e) => setNewPost(e.target.value)}
+          onKeyDown={onEnterPress}
           className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
         />
         <button
@@ -45,7 +53,7 @@ const PostComponent = () => {
 
       {/* Posts Lists */}
       {posts.map((post) => (
-        <Post post={post} key={post.id}/>
+        <Post post={post} key={post.id} setPosts={setPosts}/>
       ))}
 
     </div>
