@@ -39,8 +39,9 @@ const Sidebar = ({ setmodalType, modalType }) => {
         <div ref={menuRef} className="absolute z-20 top-0 bottom-0 left-0 rounded-md">
             <div className={` ${open ? "w-72 border border-slate-300" : "w-14 border border-white"} bg-white rounded-md h-full p-4 pt-8 relative duration-300`}>
                 <div className={`${open ? 'rotate-180' : 'rotate-0'} text-blue-500 bg-slate-300 transition-all duration-300 absolute cursor-pointer -right-3 top-9 w-7 border-dark-purple border-2 rounded-full ${!open && "rotate-180"}`}
-                    onClick={() => setOpen(!open)}>
-
+                    onClick={() => setOpen(!open)}
+                    title={`click to ${!open ? "expand" : "close"}`}
+                >
                     <KeyboardDoubleArrowLeftIcon />
                 </div>
                 <div className="flex gap-x-4 items-center">
@@ -58,7 +59,7 @@ const Sidebar = ({ setmodalType, modalType }) => {
                     {Menus.map((Menu, index) => (
                         <li key={index}
                             onClick={() => { setmodalType(Menu.title); setOpen(!open) }}
-                            className={`flex ${modalType == Menu.title ? "font-bold text-xl":"text-sm"} mt-2 rounded-md py-2 cursor-pointer items-center gap-x-3 
+                            className={`flex ${modalType == Menu.title ? "font-bold text-xl" : "text-sm"} hover:font-bold transition-all duration-100 mt-2 rounded-md py-2 cursor-pointer items-center gap-x-3 
                             ${Menu.color} `}>
                             {Menu.icon}
                             <span className={`${!open && "hidden"} origin-left duration-200`}>

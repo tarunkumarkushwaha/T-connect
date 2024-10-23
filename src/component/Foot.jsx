@@ -7,11 +7,11 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Foot = () => {
   return (
-    <footer className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
+    <footer className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white px-10 py-10">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-20 text-center md:text-left">
         
         <div>
-          <h3 className="text-2xl font-bold mb-4">Makerble</h3>
+          <h3 className="text-xl font-bold mb-4">Makerble</h3>
           <ul className="text-sm">
             <li className="mb-2">
               <a href="#" className="hover:text-yellow-300 transition-colors">About us</a>
@@ -27,7 +27,7 @@ const Foot = () => {
 
        
         <div>
-          <h3 className="text-2xl font-bold mb-4">Organisations</h3>
+          <h3 className="text-xl font-bold mb-4">Organisations</h3>
           <ul className="text-sm">
             <li className="mb-2">
               <a href="#" className="hover:text-yellow-300 transition-colors">Control Panel</a>
@@ -43,7 +43,7 @@ const Foot = () => {
 
       {/* // creator tarun  */}
         <div>
-          <h3 className="text-2xl font-bold mb-4">Your Account</h3>
+          <h3 className="text-xl font-bold mb-4">Your Account</h3>
           <ul className="text-sm">
             <li className="mb-2">
               <a href="#" className="hover:text-yellow-300 transition-colors">Library</a>
@@ -62,7 +62,7 @@ const Foot = () => {
 
         
         <div>
-          <h3 className="text-2xl font-bold mb-4">Explore</h3>
+          <h3 className="text-xl font-bold mb-4">Explore</h3>
           <ul className="text-sm">
             <li className="mb-2">
               <a href="#" className="hover:text-yellow-300 transition-colors">Metrics</a>
@@ -93,7 +93,7 @@ const Foot = () => {
 
        
         <div className="flex flex-col">
-          <h3 className="text-2xl font-bold text-center mb-4">Follow Us</h3>
+          <h3 className="text-xl font-bold text-center mb-4">Follow Us</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <a href="/" className="text-blue-400 text-3xl hover:scale-150 transition-transform">
               <XIcon />

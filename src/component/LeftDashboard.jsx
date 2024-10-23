@@ -54,7 +54,7 @@ const LeftDashboard = () => {
   return (
     <>
 
-      <div className=" relative gap-0 pl-20 md:order-1 order-2 p-4 md:w-[35%] w-full bg-slate-100 rounded-lg shadow-md">
+      <div className=" relative gap-0 pl-16 md:order-1 order-2 p-4 md:w-[35%] w-full bg-slate-100 rounded-lg shadow-md">
         <Sidebar setmodalType={setModalType} modalType={modalType} />
         <>
 
@@ -63,7 +63,7 @@ const LeftDashboard = () => {
           <div className="bg-white w-full p-2 rounded-lg shadow-md">
             <div className="flex justify-between items-center mb-4">
               <h2 className="text-lg text-blue-500 font-semibold mx-1">{modalType[0].toUpperCase() + modalType.slice(1)}</h2>
-              <button onClick={() => openModal(modalType)} className="bg-blue-500 text-white p-2 text-xs rounded-lg">
+              <button onClick={() => openModal(modalType)} className="bg-blue-500 hover:bg-blue-600 transition-colors duration-300 text-white p-2 text-xs rounded-lg">
                 + New {modalType}
               </button>
             </div>

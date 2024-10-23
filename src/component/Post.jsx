@@ -25,9 +25,9 @@ const Post = ({ post, posts, setPosts }) => {
 
         if (posts.length) {
             const updatedPosts = posts.filter((p) => p.id !== post.id);
-            console.log(updatedPosts)
+            // console.log(updatedPosts)
             setPosts(updatedPosts);
-            console.log(posts, "updated post", updatedPosts, "original post", post)
+            // console.log(posts, "updated post", updatedPosts, "original post", post)
             toast.success("Post deleted");
             setShowEdit(false);
         } else {
@@ -37,17 +37,17 @@ const Post = ({ post, posts, setPosts }) => {
 
     const addComment = () => {
         if (newComment.trim()) {
-            setComments([...comments, newComment]);
+            setComments([newComment, ...comments]);
             setNewComment("");
         }
     };
 
     const onEnterPress = (e) => {
         if (e.keyCode == 13 && e.shiftKey == false) {
-          e.preventDefault();
-          addComment();
+            e.preventDefault();
+            addComment();
         }
-      }
+    }
 
     return (
         <>
@@ -62,8 +62,8 @@ const Post = ({ post, posts, setPosts }) => {
                         </div>
                     </div>
                     <div className={`${showEdit ? 'rotate-180' : 'rotate-0'} transition-all duration-300 absolute right-5 top-2 text-black cursor-pointer`} onClick={() => setShowEdit(!showEdit)}>
-                    <SettingsIcon />
-                </div>
+                        <SettingsIcon />
+                    </div>
                 </div>
 
                 {showEdit && (
@@ -100,14 +100,14 @@ const Post = ({ post, posts, setPosts }) => {
                 </div>
 
                 <div className="mt-4">
-                    {comments.slice(0, showAllComments ? comments.length : 2).map((comment, index) => (
+                    {comments.slice(0, showAllComments ? comments.length : 3).map((comment, index) => (
                         <div key={index} className="flex items-center text-sm text-gray-600 my-1">
                             <AccountCircleIcon className="mr-2" />
                             {comment}
                         </div>
                     ))}
 
-                    {comments.length > 2 && (
+                    {comments.length > 3 && (
                         <button
                             onClick={() => setShowAllComments(!showAllComments)}
                             className="text-blue-500 text-xs mt-2"
@@ -117,7 +117,7 @@ const Post = ({ post, posts, setPosts }) => {
                     )}
                 </div>
 
-                  
+
                 <div className="flex items-center mt-4 space-x-2">
                     <AccountCircleIcon />
                     <input
@@ -131,7 +131,7 @@ const Post = ({ post, posts, setPosts }) => {
                     />
                     <button
                         onClick={addComment}
-                        className="bg-red-500 text-white px-2 py-1 rounded-lg"
+                        className="bg-red-500 hover:bg-red-600 transition-colors duration-300 text-white px-2 py-1 rounded-lg"
                     >
                         Post
                     </button>
