@@ -7,120 +7,124 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Foot = () => {
   return (
-    <footer className="bg-white py-8 border-t border-gray-200">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-2 text-center md:text-left">
+    <footer className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 text-white py-10">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 text-center md:text-left">
         
         <div>
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Makerble</h3>
-          <ul className="text-sm text-gray-600">
+          <h3 className="text-2xl font-bold mb-4">Makerble</h3>
+          <ul className="text-sm">
             <li className="mb-2">
-              <a href="#" className="hover:underline">About us</a>
+              <a href="#" className="hover:text-yellow-300 transition-colors">About us</a>
             </li>
             <li className="mb-2">
-              <a href="#" className="hover:underline">Terms & Conditions</a>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Terms & Conditions</a>
             </li>
             <li>
-              <a href="#" className="hover:underline">Privacy & Cookies</a>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Privacy & Cookies</a>
             </li>
           </ul>
         </div>
+
+       
+        <div>
+          <h3 className="text-2xl font-bold mb-4">Organisations</h3>
+          <ul className="text-sm">
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Control Panel</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Discover the Marketplace</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Create Organisation Account</a>
+            </li>
+          </ul>
+        </div>
+
+      {/* // creator tarun  */}
+        <div>
+          <h3 className="text-2xl font-bold mb-4">Your Account</h3>
+          <ul className="text-sm">
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Library</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Profile</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Projects</a>
+            </li>
+            <li>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Help</a>
+            </li>
+          </ul>
+        </div>
+
         
         <div>
-          <h3 className="text-xl font-bold text-gray-800 mb-4">organisations</h3>
-          <ul className="text-sm text-gray-600">
+          <h3 className="text-2xl font-bold mb-4">Explore</h3>
+          <ul className="text-sm">
             <li className="mb-2">
-              <a href="#" className="hover:underline">Control Panel</a>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Metrics</a>
             </li>
             <li className="mb-2">
-              <a href="#" className="hover:underline">Discover the Marketplace</a>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Networks</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Strategies</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Projects</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Studies</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Surveys</a>
+            </li>
+            <li className="mb-2">
+              <a href="#" className="hover:text-yellow-300 transition-colors">Tips</a>
             </li>
             <li>
-              <a href="#" className="hover:underline">Create Organisation Account</a>
+              <a href="#" className="hover:text-yellow-300 transition-colors">Vouchers</a>
             </li>
           </ul>
         </div>
 
-        <div>
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Your Account</h3>
-          <ul className="text-sm text-gray-600">
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Library</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Profile</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Projects</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">Help</a>
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-bold text-gray-800 mb-4">Explore</h3>
-          <ul className="text-sm text-gray-600">
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Metrics</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Networks</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Strategies</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Projects</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Studies</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Surveys</a>
-            </li>
-            <li className="mb-2">
-              <a href="#" className="hover:underline">Tips</a>
-            </li>
-            <li>
-              <a href="#" className="hover:underline">Vouchers</a>
-            </li>
-          </ul>
-        </div>
-
-        <div className="flex flex-col ">
-          <h3 className="text-xl text-center font-bold text-gray-800 mb-4">Follow us</h3>
-          <div className="flex justify-center gap-1">
-            <a href="/" className="text-blue-500 text-2xl">
-              <XIcon/>
+       
+        <div className="flex flex-col">
+          <h3 className="text-2xl font-bold text-center mb-4">Follow Us</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a href="/" className="text-blue-400 text-3xl hover:scale-150 transition-transform">
+              <XIcon />
             </a>
-            <a href="/" className="text-red-500 text-2xl">
-              <YouTubeIcon/>
+            <a href="/" className="text-red-700 text-3xl hover:scale-150 transition-transform">
+              <YouTubeIcon />
             </a>
-            <a href="/" className="text-pink-500 text-2xl">
-              <InstagramIcon/>
+            <a href="/" className="text-pink-800 text-3xl hover:scale-150 transition-transform">
+              <InstagramIcon />
             </a>
-            <a href="/" className="text-blue-400 text-2xl">
-              <LinkedInIcon/>
+            <a href="/" className="text-cyan-600 text-3xl hover:scale-150 transition-transform">
+              <LinkedInIcon />
             </a>
-            <a href="/" className="text-green-500 text-2xl">
-              <FacebookIcon/>
+            <a href="/" className="text-blue-700 text-3xl hover:scale-150 transition-transform">
+              <FacebookIcon />
             </a>
           </div>
         </div>
-
       </div>
 
-      {/* Contact Info Section */}
-      <div className="border-t border-gray-200 mt-8 py-4 text-center">
-        <p className="text-sm text-gray-600">
-          Contact Us: <a href="mailto:contact@makerble.com" className="text-blue-500 hover:underline">contact@makerble.com</a> | <a href="tel:02081236233" className="text-blue-500 hover:underline">020 8123 6233</a>
+
+      <div className="border-t border-gray-200 mt-8 py-4 text-center text-white">
+        <p className="text-sm">
+          Contact Us: <a href="mailto:contact@makerble.com" className="text-blue-200 hover:underline">contact@makerble.com</a> | <a href="tel:02081236233" className="text-blue-200 hover:underline">020 8123 6233</a>
         </p>
-        <p className="text-sm text-gray-600 mt-2">&copy; Makerble 2023</p>
+        <p className="text-sm mt-2">&copy; Makerble 2023</p>
       </div>
     </footer>
   );
 };
 
 export default Foot;
+
 

@@ -1,32 +1,21 @@
 import React, { useState } from "react";
-import Modal from "./Modal";
 
 const RightDashboard = () => {
-  // Tasks state
   const [tasks, setTasks] = useState([
-    { id: 1, title: "follow up call needed", completed: false },
-    { id: 2, title: "contact the local authority", completed: false },
+    { id: 1, title: "follow up call needed", completed: false, color: "border-orange-300" },
+    { id: 2, title: "contact the local authority", completed: false, color: "border-green-300" },
   ]);
-  const [boards, setboards] = useState(["Angola Production", "Attendance Reporting", "CHIVA RYH"])
   const [newTask, setNewTask] = useState("");
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [modalType, setModalType] = useState(null);
 
-  const handleAdd = (data) => {
-    if (modalType == "boards") {
-      setboards(prev => [...prev, data]);
-    }
-    setModalOpen(false);
-  };
-
-  const openModal = (type) => {
-    setModalType(type);
-    setModalOpen(true);
-  };
+  const colors = [
+    'border-red-300', 'border-blue-300', 'border-green-300', 'border-yellow-300', 'border-purple-300',
+    'border-pink-300', 'border-indigo-300', 'border-teal-300', 'border-orange-300', 'border-cyan-300',
+  ];
 
   const addTask = () => {
     if (newTask.trim() !== "") {
-      setTasks([...tasks, { id: tasks.length + 1, title: newTask, completed: false }].reverse());
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      setTasks([...tasks, { id: tasks.length + 1, title: newTask, completed: false, color: randomColor }].reverse());
       setNewTask("");
     }
   };
@@ -41,36 +30,22 @@ const RightDashboard = () => {
   };
 
   let personalProgress = [
-    { ques: "Are either of your parents living?", percent: 70 },
-    { ques: "Do you belong to any groups in which you participate?", percent: 50 },
-    { ques: "1-2-1 Events", percent: 30 },
+    { ques: "Are either of your parents living?", percent: 70, color: "bg-orange-500" },
+    { ques: "Do you belong to any groups in which you participate?", percent: 50 ,color: "bg-blue-300" },
+    { ques: "1-2-1 Events", percent: 30, color: "bg-green-500" },
   ];
 
   return (
-    <div className="container w-[32%] p-4 bg-slate-100 rounded-lg">
-      {/* Boards Section */}
-      <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-        <div className="flex justify-between items-center">
-          <h2 className="text-sm text-blue-500 font-semibold">Boards</h2>
-          <button onClick={() => openModal('boards')} className="bg-blue-500 text-white p-2 text-xs rounded-lg">
-            + New Board
-          </button>
-        </div>
-        <div className="mt-4">
-          <ul>
-            {boards.map((board, i) => <li key={i} className="flex items-center text-sm text-gray-600 font-semibold"><img className='h-14 w-14 mx-5 my-1 rounded-xl' src='/makerbleborderlogo.png' alt="markable" />{board}</li>)}
-          </ul>
-        </div>
-      </div>
+    <div className=" md:w-[30%] w-full p-4 order-3 bg-slate-100 rounded-lg">
 
       {/* Personal Progress Section */}
       <div className="bg-white p-4 rounded-lg shadow-md mb-4">
-        <h2 className="text-sm text-blue-500 font-semibold">Personal Progress</h2>
+        <h2 className="text-lg text-blue-500 font-semibold">Personal Progress</h2>
         <div className="mt-4 text-sm text-gray-600 text-left">
           {personalProgress.map((item, i) => <div key={i} className="mb-2">
             <span>{item.ques}</span>
             <div className="w-full bg-gray-200 h-4 mt-1 rounded-xl">
-              <div className="bg-green-500 h-4 rounded-xl" style={{ width: item.percent }}></div>
+              <div className={`${item.color} h-4 rounded-xl`} style={{ width: item.percent }}></div>
             </div>
           </div>)}
         </div>
@@ -78,7 +53,7 @@ const RightDashboard = () => {
 
       {/* Tasks Section */}
       <div className="bg-white p-4 rounded-lg shadow-md">
-        <h2 className="text-sm text-blue-500 font-semibold">Tasks</h2>
+        <h2 className="text-lg text-blue-500 font-semibold">Tasks</h2>
         <div className="flex items-center mt-4 mb-4">
           <input
             type="text"
@@ -99,7 +74,7 @@ const RightDashboard = () => {
           {tasks.map((task) => (
             <div
               key={task.id}
-              className={`flex items-center justify-between border p-2 mb-2 text-sm rounded-lg ${task.completed ? "bg-green-200 " : "bg-white border-green-300"
+              className={`flex items-center justify-between border p-2 mb-2 text-sm rounded-lg ${task.completed ? "bg-green-200 " : `bg-white ${task.color}`
                 }`}
             >
               <span className={task.completed ? "line-through" : ""}>
@@ -120,13 +95,13 @@ const RightDashboard = () => {
           ))}
         </div>
       </div>
-      <Modal
+      {/* <Modal
         isOpen={isModalOpen}
         onClose={() => setModalOpen(false)}
         onAction={handleAdd}
         actionLabel={`+ New ${modalType}`}
         actionName={`${modalType}`}
-      />
+      /> */}
     </div>
   );
 };

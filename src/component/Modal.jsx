@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 const Modal = ({ isOpen, onClose, onAction, actionName }) => {
     const [inputData, setInputData] = useState('');
-    const modalRef = useRef(null);  // To detect clicks outside
+    const modalRef = useRef(null); 
 
     const handleInputChange = (e) => {
         setInputData(e.target.value);
@@ -24,7 +24,6 @@ const Modal = ({ isOpen, onClose, onAction, actionName }) => {
         }
       }
 
-    // Close modal on outside click
     const handleOutsideClick = (e) => {
         if (modalRef.current && !modalRef.current.contains(e.target)) {
             onClose();

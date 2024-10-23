@@ -29,25 +29,25 @@ const Topbar = ({ topslide, toggletopslide }) => {
     }, [closeOpenMenus]);
     return (
         <>
-            <aside ref={menuRef} className={`fixed smooth-entry z-20 top-0 left-0 md:h-1/4 sm:h-2/4 shadow-lg w-full transition-all duration-1000 ease-in-out ${!topslide ? "-translate-y-full" : "-translate-y-1"}`}>
-                <div className="h-full px-3 py-4 overflow-y-auto bg-slate-200/85">
+            <aside ref={menuRef} className={`fixed smooth-entry z-30 top-0 left-0 md:h-1/4 sm:h-2/4 shadow-lg w-full transition-all duration-700 ease-in-out ${!topslide ? "-translate-y-full" : "-translate-y-1"}`}>
+                <div className="h-full px-3 py-4 overflow-y-auto bg-gray-300/95">
                     <div className="flex justify-center items-center p-4 text-gray-900 cursor-pointer rounded-lg">
                         <span className="ms-3 font-extrabold text-3xl">Markable</span>
                     </div>
                     <div className="flex md:flex-row flex-col items-center justify-center gap-4">
                         <div className="flex items-center justify-center gap-4">
-                            <div className="relative">
-                                <NotificationsIcon />
+                            <div className="relative ">
+                                <div className="text-yellow-400 cursor-pointer"><NotificationsIcon /></div>
                                 {notifications > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                                    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                         {notifications}
                                     </span>
                                 )}
                             </div>
                             <div className="relative">
-                                <EmailIcon />
+                                <div className="text-blue-400 cursor-pointer"><EmailIcon /></div>
                                 {messages > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-blue-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                                    <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
                                         {messages}
                                     </span>
                                 )}
@@ -55,7 +55,7 @@ const Topbar = ({ topslide, toggletopslide }) => {
                             <BoltIcon />
                         </div>
                         <div className="flex items-center space-x-2">
-                            <AccountCircleIcon fontSize="large" />
+                            <div className="text-cyan-400"><AccountCircleIcon fontSize="large" /></div>
                             <span className="text-sm font-medium text-gray-700 whitespace-nowrap">Tarun Kushwaha</span>
                         </div>
 
@@ -73,7 +73,7 @@ const Topbar = ({ topslide, toggletopslide }) => {
                         </div>
                     </div>
                 </div>
-                <div className={`${topslide ? 'rotate-180' : 'rotate-0'} transition-all duration-300 absolute right-5 top-6 text-black cursor-pointer`} onClick={toggletopslide}>
+                <div className={`${topslide ? 'rotate-180' : 'rotate-0'} transition-all duration-300 absolute right-5 top-7 text-black cursor-pointer`} onClick={toggletopslide}>
                     <SettingsIcon fontSize='large' />
                 </div>
             </aside>

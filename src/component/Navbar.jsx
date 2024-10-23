@@ -11,7 +11,7 @@ const Navbar = ({ setQuery, toggletopslide, topslide }) => {
     const location = useLocation();
 
     const style = {
-        btnMode: !dark ? "from-green-600 to-blue-900" : "from-green-100 to-blue-200",
+        btnMode: !dark ? "bg-blue-900" : "bg-blue-200",
         uiMode: dark ? "bg-slate-900" : "bg-green-200",
         text: dark ? "text-white" : "text-slate-900"
     };
@@ -32,7 +32,7 @@ const Navbar = ({ setQuery, toggletopslide, topslide }) => {
 
     return (
         <>
-            <nav className={`shadow-xl z-10 bg-white min-h-[12vh] px-5 py-1 flex flex-col md:flex-row justify-between items-center`}>
+            <nav className={`shadow-xl z-10 bg-slate-200 min-h-[12vh] px-5 py-1 flex flex-col md:flex-row justify-between items-center`}>
                 <div
                     className={`${navitems ? 'rotate-180' : 'rotate-0'} transition-transform duration-300 absolute md:hidden flex top-6 left-8 text-black cursor-pointer`}
                     onClick={() => setnavitems(!navitems)}>
@@ -61,9 +61,9 @@ const Navbar = ({ setQuery, toggletopslide, topslide }) => {
                         </li>
                     </ul>
 
-                    <div className={`w-full max-w-80 rounded-md pl-6 p-2 my-1 mx-14 bg-slate-200 md:mb-0 mb-2`}>
+                    <div className={`w-full max-w-80 rounded-md pl-6 p-2 my-1 mx-14 bg-slate-50 md:mb-0 mb-2`}>
                         <input
-                            className='bg-slate-200 text-slate-900 outline-none'
+                            className='bg-slate-50 text-slate-900 outline-none'
                             onChange={(e) => setQuery(e.target.value.toLowerCase())}
                             type="text"
                             placeholder="Search"

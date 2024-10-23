@@ -11,9 +11,10 @@ const ErrorPage = ({ errorCode }) => {
         <p className="text-lg text-gray-800 mb-8">Contact tarun...</p>
         <button
           className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700 focus:outline-none focus:bg-red-700"
-          onClick={() => 
+          onClick={() => {
             navigate("/")
-            // window.location.reload()
+            window.location.reload()
+          }
           }
         >
           Go to main Page
