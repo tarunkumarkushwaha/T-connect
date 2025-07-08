@@ -32,7 +32,7 @@ const Topbar = ({ topslide, toggletopslide }) => {
             <aside ref={menuRef} className={`fixed smooth-entry z-30 top-0 left-0 md:h-1/4 sm:h-2/4 shadow-lg w-full transition-all duration-700 ease-in-out ${!topslide ? "-translate-y-full" : "-translate-y-1"}`}>
                 <div className="h-full px-3 py-4 overflow-y-auto bg-gray-300/95">
                     <div className="flex justify-center items-center p-4 text-gray-900 cursor-pointer rounded-lg">
-                        <span className="ms-3 font-extrabold text-3xl">Markable</span>
+                        <span className="ms-3 font-extrabold text-3xl">T-connect</span>
                     </div>
                     <div className="flex md:flex-row flex-col items-center justify-center gap-4">
                         <div className="flex items-center justify-center gap-4">
